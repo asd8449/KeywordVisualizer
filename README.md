@@ -20,16 +20,6 @@
 
 ---
 
-## 파일 구조
-
-KeywordVisualizerApp/ ├── data/ # CSV 파일 저장 및 데이터 로드 폴더 ├── lib/
-│ ├── myTextMining.py # 텍스트 전처리, 토큰화, 단어 빈도수 분석, 간단한 시각화 함수 포함 │ ├── NaverNewsCrawler.py # 네이버 뉴스 검색 API 호출 및 결과 CSV 저장 함수 포함 │ └── STVisualizer.py # Matplotlib을 활용한 수평 막대 그래프, 워드클라우드 시각화 함수 포함 ├── KeywordVisualizeConsoleApp.py # 콘솔(터미널) 환경에서 뉴스 검색 및 텍스트 분석 실행 └── KeywordVisualizerSTApp.py # Streamlit 기반 웹 대시보드
-
-yaml
-복사
-
----
-
 ## 설치 방법
 
 1. **파이썬 및 가상 환경 설정**  
@@ -42,30 +32,9 @@ yaml
    pip install streamlit pandas konlpy wordcloud matplotlib
 참고: KoNLPy 사용 시 Java(JDK) 환경이 필요합니다. KoNLPy 설치 가이드를 참고하세요.
 
-네이버 뉴스 API 인증 정보 설정
-lib/NaverNewsCrawler.py 파일 내에 있는 client_id와 client_secret 값을 네이버 개발자 센터에서 발급받은 값으로 수정하세요.
+## 실행 방법
 
-python
-복사
-client_id = "YOUR_CLIENT_ID"
-client_secret = "YOUR_CLIENT_SECRET"
-실행 방법
-1. 콘솔 애플리케이션
-콘솔(터미널)에서 다음 명령어를 실행하면, 키워드 및 기타 옵션을 인자로 하여 뉴스 검색 후 텍스트 분석 및 시각화가 진행됩니다.
-
-bash
-복사
-python KeywordVisualizeConsoleApp.py --keyword "인공지능" --csv --col "description" --display 10 --total 30
---keyword: 검색할 키워드
-
---csv: CSV 파일로 결과 저장 여부
-
---col: 분석할 텍스트 컬럼 (예: "description", "title")
-
---display 및 --total: 검색 결과 개수 설정
-
-2. Streamlit 대시보드
-Streamlit을 사용하여 웹 대시보드로 실행할 경우, 아래 명령어를 입력합니다.
+아래 명령어를 입력합니다.
 
 bash
 복사
@@ -85,16 +54,3 @@ Windows 환경에서는 c:/Windows/Fonts/malgun.ttf 폰트를 사용하지만, �
 
 디버깅:
 Streamlit 대시보드에서 문제가 발생할 경우, 콘솔 또는 Streamlit 로그를 확인해 주세요.
-
-License
-이 프로젝트는 MIT License 하에 배포됩니다.
-
-Contact
-프로젝트에 대한 문의나 제안은 GitHub Issues를 통해 남겨주세요.
-
-yaml
-복사
-
----
-
-위 내용을 그대로 복사해서 README.md 파일에 붙여넣으시면 됩니다. 프로젝트 환경에 따라 일부 내용을 조정할 수 있습니다.
